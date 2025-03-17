@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="stylesloan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <p>Email: support@agriculture.com</p>
+            <p>Toll-Free: 1800-123-4567</p>
+        </div>
+        <div class="header-center">
+            <h1>KisanVikas</h1>
+            <p>Empowering Farmers, Ensuring Growth</p>
+        </div>
+        <div class="header-right">
+            <div class="auth-section">
+                <a href="login.html" class="login">Login</a>
+                <span>|</span>
+                <a href="registration.html" class="signup">Sign Up</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" target="_blank"><img src="Assets/facebook.png" alt="Facebook"></a>
+                <a href="#" target="_blank"><img src="Assets/twitter.png" alt="Twitter"></a>
+                <a href="#" target="_blank"><img src="Assets/instagram.png" alt="Instagram"></a>
+                <a href="#" target="_blank"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Loan EMI Calculator</h1>
+        <form id="loanForm">
+            <label for="amount">Loan Amount (INR):</label>
+            <input type="number" id="amount" required>
+
+            <label for="interest">Interest Rate (% per annum):</label>
+            <input type="number" id="interest" required>
+
+            <label for="months">Loan Term (Months):</label>
+            <input type="number" id="months" required>
+
+            <button type="submit">Calculate EMI</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <footer id="modern-footer">
+        <div class="modern-footer-container">
+            <div class="footer-column-footer-logo">
+                <img src="Assets/k1.png" alt="Logo">
+                <p>Your trusted partner for digital solutions.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="modern-footer-icons">
+                    <a href="#"><img src="Assets/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Assets/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul class="modern-footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="loan.html">Loan Calculator</a></li>
+                    <li><a href="schemes.html">Schemes</a></li>
+                    <li><a href="#">Crop guidance</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Contact</h2>
+                <ul class="modern-footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
+                    <li><i class="fas fa-phone"></i> Toll-Free: 1800-123-4567</li>
+                    <li><i class="fas fa-envelope"></i> Email: support@agriculture.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modern-footer-bottom">
+            <p>&copy; 2025 KisanVikas | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="calculator.js"></script>
+</body>
+</html>

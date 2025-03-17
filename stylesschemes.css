@@ -1,0 +1,120 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eafaf1;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2rem;
+}
+
+/* Container Styles */
+.container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.container h2 {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+/* Filter Dropdown */
+.filter {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.filter label {
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+.filter select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Scheme Results */
+.schemes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.scheme {
+    flex: 1 1 calc(45% - 20px);
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scheme:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.scheme h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+.scheme p {
+    margin: 10px 0;
+}
+
+.scheme a {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    background-color: #28a745;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.scheme a:hover {
+    background-color: #218838;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
