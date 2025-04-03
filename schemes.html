@@ -27,53 +27,7 @@
         </div>
 
         <div id="schemeResults" class="schemes">
-            <!-- Scheme 1 -->
-            <div class="scheme insurance">
-                <h3>PM Fasal Bima Yojana (PMFBY)</h3>
-                <p>Crop insurance for farmers to protect them from losses due to calamities.</p>
-                <a href="https://pmfby.gov.in" target="_blank">Learn More</a>
-            </div>
-
-            <!-- Scheme 2 -->
-            <div class="scheme insurance">
-                <h3>Restructured Weather Based Crop Insurance Scheme (RWBCIS)</h3>
-                <p>Insurance scheme for weather-related risks in farming.</p>
-                <a href="https://www.aicofindia.com/rwbcis-more-faq" target="_blank">Learn More</a>
-            </div>
-
-            <!-- Scheme 3 -->
-            <div class="scheme irrigation">
-                <h3>Pradhan Mantri Krishi Sinchai Yojana (PMKSY)</h3>
-                <p>Aimed at improving irrigation facilities for farmers.</p>
-                <a href="https://pmksy.gov.in" target="_blank">Learn More</a>
-            </div>
-
-            <!-- Scheme 4 -->
-            <div class="scheme housing">
-                <h3>Pradhan Mantri Awaas Yojana - Gramin (PMAY-G)</h3>
-                <p>Providing housing for rural poor with basic amenities.</p>
-                <a href="https://pmayg.nic.in" target="_blank">Learn More</a>
-            </div>
-
-            <!-- Scheme 5 -->
-            <div class="scheme infrastructure">
-                <h3>Rural Infrastructure Development Fund (RIDF)</h3>
-                <p>Financial support for rural infrastructure, including roads and irrigation.</p>
-                <a href="https://nabard.org" target="_blank">Learn More</a>
-            </div>
-
-            <!-- Add 45 more schemes below -->
-            <div class="scheme insurance">
-                <h3>National Agriculture Market (eNAM)</h3>
-                <p>Creating a unified market for agricultural commodities.</p>
-                <a href="https://enam.gov.in" target="_blank">Learn More</a>
-            </div>
-            <div class="scheme irrigation">
-                <h3>PM Kisan Samman Nidhi</h3>
-                <p>Direct income support to small and marginal farmers.</p>
-                <a href="https://pmkisan.gov.in" target="_blank">Learn More</a>
-            </div>
-            <!-- More schemes go here, up to 50 total -->
+            <p>Loading schemes...</p>
         </div>
     </div>
 
@@ -82,18 +36,51 @@
     </footer>
 
     <script>
-        function filterSchemes() {
-            var filterValue = document.getElementById('filterSelect').value;
-            var schemes = document.querySelectorAll('.scheme');
-            
-            schemes.forEach(function(scheme) {
-                if (filterValue === 'all' || scheme.classList.contains(filterValue)) {
-                    scheme.style.display = 'block';
-                } else {
-                    scheme.style.display = 'none';
-                }
-            });
+       const apiKey = '579b464db66ec23bdd0000018073a827c89b44077e0e13abdafd1426';
+       const apiUrl = 'https://api.data.gov.in/resource/<resource-id>'; 
+
+async function fetchSchemes() {
+    try {
+        // Fetch API data
+        const response = await fetch(`${apiUrl}?api-key=${apiKey}&format=json`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
+        
+        const data = await response.json();
+        
+        if (!data.records || data.records.length === 0) {
+            throw new Error("No schemes found in API response.");
+        }
+
+        displaySchemes(data.records);
+    } catch (error) {
+        console.error('Error fetching schemes:', error);
+        document.getElementById('schemeResults').innerHTML = `<p>Failed to load schemes: ${error.message}</p>`;
+    }
+}
+
+function displaySchemes(schemes) {
+    const container = document.getElementById('schemeResults');
+    container.innerHTML = ''; // Clear previous content
+
+    schemes.forEach(scheme => {
+        const schemeDiv = document.createElement('div');
+        schemeDiv.classList.add('scheme');
+        schemeDiv.innerHTML = `
+            <h3>${scheme.scheme_name || 'No Name'}</h3>
+            <p>${scheme.description || 'No description available'}</p>
+            <a href="${scheme.url || '#'}" target="_blank">Learn More</a>
+        `;
+        container.appendChild(schemeDiv);
+    });
+}
+
+// Fetch schemes on page load
+window.onload = fetchSchemes;
+
+
     </script>
 </body>
 </html>

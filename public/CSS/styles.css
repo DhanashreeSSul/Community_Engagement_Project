@@ -6,7 +6,6 @@ body {
 }
 
 
-/* Base Styles */
 header {
     display: flex;
     align-items: center;
@@ -23,7 +22,7 @@ header {
     flex: 1;
 }
 
-/* Header Left */
+
 .header-left {
     font-size: 0.9em;
     text-align: left;
@@ -34,7 +33,7 @@ header {
     color: #080a3c;
 }
 
-/* Header Center */
+
 .header-center {
     text-align: center;
 }
