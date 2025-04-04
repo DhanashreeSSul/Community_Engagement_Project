@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Schemes</title>
+    <link rel="stylesheet" href="/CSS/stylesschemes.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .schemes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .scheme {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .scheme h3 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .scheme p {
+            margin: 5px 0;
+            color: #666;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Agriculture Schemes Portal</h1>
+        <p>Empowering farmers by connecting them with the right opportunities</p>
+    </header>
+
+    <div class="container">
+        <h2>Available Schemes</h2>
+
+        <div id="schemeResults" class="schemes">
+            <p>Loading schemes...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Agriculture Schemes Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const apiKey = '579b464db66ec23bdd0000018073a827c89b44077e0e13abdafd1426';
+            const apiUrl = `https://api.data.gov.in/resource/c622afa6-6515-419e-8d48-001358fe9aba?api-key=${apiKey}&format=json`;
+
+            // Function to fetch schemes with proper error handling
+            async function fetchSchemes() {
+                try {
+                    console.log("Fetching schemes from API...");
+                    const response = await fetch(apiUrl, {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    console.log("Raw API response:", data);
+
+                    if (!data.records || !Array.isArray(data.records)) {
+                        throw new Error("No valid schemes found in API response. Expected 'records' array.");
+                    }
+
+                    if (data.records.length === 0) {
+                        throw new Error("API returned an empty list of schemes.");
+                    }
+
+                    console.log("Fetched schemes:", data.records);
+                    return data.records;
+                } catch (error) {
+                    console.error("Error fetching schemes:", error);
+                    throw error;
+                }
+            }
+
+            function displaySchemes(schemes) {
+                const container = document.getElementById('schemeResults');
+                container.innerHTML = '';
+
+                if (!schemes || schemes.length === 0) {
+                    console.log("No schemes to display.");
+                    container.innerHTML = "<p>No schemes available.</p>";
+                    return;
+                }
+
+                console.log("Displaying schemes:", schemes);
+                schemes.forEach((scheme, index) => {
+                    console.log(`Rendering scheme ${index}:`, scheme);
+                    const schemeDiv = document.createElement('div');
+                    schemeDiv.classList.add('scheme');
+
+                    const schemeName = scheme.name_of_mission_scheme || `Scheme ${index + 1}`;
+                    const budgetEstimate = scheme.be_2014_15 || 'N/A';
+                    const revisedEstimate = scheme.re_2014_15 || 'N/A';
+                    const actualExpenditure = scheme.actual_exp_2014_15 || 'N/A';
+
+                    schemeDiv.innerHTML = `
+                        <h3>${schemeName}</h3>
+                        <p><strong>Budget Estimate (2014-15):</strong> ${budgetEstimate}</p>
+                        <p><strong>Revised Estimate (2014-15):</strong> ${revisedEstimate}</p>
+                        <p><strong>Actual Expenditure (2014-15):</strong> ${actualExpenditure}</p>
+                        <button disabled>Learn More</button>
+                    `;
+                    container.appendChild(schemeDiv);
+                });
+                console.log("Finished rendering schemes.");
+            }
+
+            // Main function to fetch and display schemes
+            async function loadSchemes() {
+                const container = document.getElementById('schemeResults');
+                container.innerHTML = '<p>Loading schemes...</p>';
+
+                try {
+                    const schemes = await fetchSchemes();
+                    displaySchemes(schemes);
+                } catch (error) {
+                    console.error("Error in loadSchemes:", error);
+                    container.innerHTML = `<p>Failed to load schemes: ${error.message}. Please try again later.</p>`;
+                }
+            }
+
+            // Load schemes on page load
+            console.log("Starting initial fetch...");
+            await loadSchemes();
+        });
+    </script>
+</body>
+</html>

@@ -72,6 +72,15 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+// ✅ Loan & Schemes Routes
+app.get("/loan", (req, res) => {
+    res.render("loan");
+});
+
+app.get("/schemes", (req, res) => {
+    res.render("schemes");
+});
+
 app.listen(3000, () => {
     console.log("Server running on http://localhost:3000");
 });
