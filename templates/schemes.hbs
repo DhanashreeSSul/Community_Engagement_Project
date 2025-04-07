@@ -6,55 +6,93 @@
     <title>Agriculture Schemes</title>
     <link rel="stylesheet" href="/CSS/stylesschemes.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
         header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        header h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 1rem;
         }
         .schemes {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 1.5rem;
+            margin: 2rem 0;
         }
         .scheme {
-            border: 1px solid #ccc;
-            padding: 15px;
-            border-radius: 5px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .scheme:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         .scheme h3 {
-            margin: 0 0 10px;
-            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--heading-color);
         }
         .scheme p {
-            margin: 5px 0;
-            color: #666;
+            margin-bottom: 0.75rem;
+            color: var(--light-text);
         }
         button {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 0.75rem 1.5rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: not-allowed;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #3d8b40;
         }
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #f1f1f1;
-            margin-top: 20px;
+            padding: 2rem 0;
+            background-color: white;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+        }
+        footer p {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--light-text);
+        }
+        .error-message {
+            color: #d32f2f;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #ffebee;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .amount {
+            font-weight: 500;
+            color: var(--heading-color);
         }
     </style>
 </head>
@@ -66,14 +104,53 @@
 
     <div class="container">
         <h2>Available Schemes</h2>
-
         <div id="schemeResults" class="schemes">
-            <p>Loading schemes...</p>
+            <div class="loading">
+                <p>Loading schemes...</p>
+                <div class="spinner"></div>
+            </div>
         </div>
     </div>
 
-    <footer>
-        <p>© 2025 Agriculture Schemes Portal. All rights reserved.</p>
+    <footer id="modern-footer">
+        <div class="modern-footer-container">
+            <div class="footer-column-footer-logo">
+                <img src="Assets/k1.png" alt="Logo">
+                <p>Your trusted partner for digital solutions.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="modern-footer-icons">
+                    <a href="#"><img src="Assets/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Assets/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul class="modern-footer-links">
+                    <li><a href="index.hbs">Home</a></li>
+                    <li><a href="/loan">Loan Calculator</a></li>
+                    <li><a href="/schemes">Schemes</a></li>
+                    <li><a href="#">Crop guidance</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+        </div>
+           <div class="footer-column">
+            <h2>Contact</h2>
+            <ul class="modern-footer-contact">
+                <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
+                <li><i class="fas fa-phone"></i> Toll-Free: 1800-123-4567</li>
+                <li><i class="fas fa-envelope"></i> Email: support@agriculture.com</li>
+                <li><i class="fas fa-comment-dots"></i> <a href="https://forms.gle/E5sQEWYuMW8FFmyN9" style="color: #fcd462; text-decoration: underline;">Give Feedback</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="modern-footer-bottom">
+            <p>&copy; 2025 KisanVikas | <a href="#">Privacy Policy</a></p>
+        </div>
     </footer>
 
     <script>
@@ -81,33 +158,23 @@
             const apiKey = '579b464db66ec23bdd0000018073a827c89b44077e0e13abdafd1426';
             const apiUrl = `https://api.data.gov.in/resource/c622afa6-6515-419e-8d48-001358fe9aba?api-key=${apiKey}&format=json`;
 
-            // Function to fetch schemes with proper error handling
             async function fetchSchemes() {
                 try {
-                    console.log("Fetching schemes from API...");
                     const response = await fetch(apiUrl, {
                         method: 'GET',
-                        headers: {
-                            'Accept': 'application/json',
-                        },
+                        headers: { 'Accept': 'application/json' }
                     });
 
                     if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                        throw new Error(`HTTP error! Status: ${response.status}`);
                     }
 
                     const data = await response.json();
-                    console.log("Raw API response:", data);
-
+                    
                     if (!data.records || !Array.isArray(data.records)) {
-                        throw new Error("No valid schemes found in API response. Expected 'records' array.");
+                        throw new Error("Invalid data format received from API");
                     }
 
-                    if (data.records.length === 0) {
-                        throw new Error("API returned an empty list of schemes.");
-                    }
-
-                    console.log("Fetched schemes:", data.records);
                     return data.records;
                 } catch (error) {
                     console.error("Error fetching schemes:", error);
@@ -120,21 +187,28 @@
                 container.innerHTML = '';
 
                 if (!schemes || schemes.length === 0) {
-                    console.log("No schemes to display.");
-                    container.innerHTML = "<p>No schemes available.</p>";
+                    container.innerHTML = `
+                        <div class="error-message">
+                            No schemes available at the moment. Please try again later.
+                        </div>
+                    `;
                     return;
                 }
 
-                console.log("Displaying schemes:", schemes);
                 schemes.forEach((scheme, index) => {
-                    console.log(`Rendering scheme ${index}:`, scheme);
                     const schemeDiv = document.createElement('div');
                     schemeDiv.classList.add('scheme');
 
-                    const schemeName = scheme.name_of_mission_scheme || `Scheme ${index + 1}`;
-                    const budgetEstimate = scheme.be_2014_15 || 'N/A';
-                    const revisedEstimate = scheme.re_2014_15 || 'N/A';
-                    const actualExpenditure = scheme.actual_exp_2014_15 || 'N/A';
+                    const schemeName = scheme.name_of_mission__scheme || `Scheme ${index + 1}`;
+                    const budgetEstimate = scheme._2014_15___be ? 
+                        `<span class="amount">₹${scheme._2014_15___be.toLocaleString()} crore</span>` : 
+                        '<span class="amount">Not Available</span>';
+                    const revisedEstimate = scheme._2014_15___re ? 
+                        `<span class="amount">₹${scheme._2014_15___re.toLocaleString()} crore</span>` : 
+                        '<span class="amount">Not Available</span>';
+                    const actualExpenditure = scheme._2014_15___actual_exp_ ? 
+                        `<span class="amount">₹${scheme._2014_15___actual_exp_.toLocaleString()} crore</span>` : 
+                        '<span class="amount">Not Available</span>';
 
                     schemeDiv.innerHTML = `
                         <h3>${schemeName}</h3>
@@ -145,25 +219,29 @@
                     `;
                     container.appendChild(schemeDiv);
                 });
-                console.log("Finished rendering schemes.");
             }
 
-            // Main function to fetch and display schemes
             async function loadSchemes() {
                 const container = document.getElementById('schemeResults');
-                container.innerHTML = '<p>Loading schemes...</p>';
+                container.innerHTML = `
+                    <div class="loading">
+                        <p>Loading schemes...</p>
+                        <div class="spinner"></div>
+                    </div>
+                `;
 
                 try {
                     const schemes = await fetchSchemes();
                     displaySchemes(schemes);
                 } catch (error) {
-                    console.error("Error in loadSchemes:", error);
-                    container.innerHTML = `<p>Failed to load schemes: ${error.message}. Please try again later.</p>`;
+                    container.innerHTML = `
+                        <div class="error-message">
+                            Failed to load schemes: ${error.message}. Please try again later.
+                        </div>
+                    `;
                 }
             }
 
-            // Load schemes on page load
-            console.log("Starting initial fetch...");
             await loadSchemes();
         });
     </script>

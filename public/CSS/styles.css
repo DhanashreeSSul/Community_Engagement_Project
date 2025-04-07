@@ -10,8 +10,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgb(3,91,9);
-    background: linear-gradient(332deg, rgba(3,91,9,1) 35%, rgba(2,158,13,1) 82%);
+    background: rgba(2,158,13,1);
     padding: 10px 20px;
     color: white;
     flex-wrap: wrap;
@@ -22,7 +21,6 @@ header {
     flex: 1;
 }
 
-
 .header-left {
     font-size: 0.9em;
     text-align: left;
@@ -32,7 +30,6 @@ header {
     margin: 5px 0;
     color: #080a3c;
 }
-
 
 .header-center {
     text-align: center;
@@ -61,7 +58,6 @@ h1:hover {
     color: #d0c303;
 }
 
-/* Header Right */
 .header-right {
     display: flex;
     flex-direction: column;
@@ -69,6 +65,24 @@ h1:hover {
     gap: 10px;
 }
 
+/* 🔄 Removed .social-icons completely */
+
+/* ✅ Profile Picture Styling */
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+    border-color: #f7b538;
+}
+
+/* Authentication section (if any) */
 .auth-section {
     display: flex;
     align-items: center;
@@ -86,22 +100,7 @@ h1:hover {
     color: #f7b538;
 }
 
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons a img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease;
-}
-
-.social-icons a img:hover {
-    transform: scale(1.2);
-}
-
-/* Responsive Design */
+/* Responsive Styles */
 @media screen and (max-width: 1024px) {
     header {
         flex-direction: column;
@@ -148,20 +147,19 @@ h1:hover {
         font-size: 1em;
     }
     
-    .social-icons a img {
-        width: 20px;
-        height: 20px;
+    .profile-pic {
+        width: 40px;
+        height: 40px;
     }
 }
+
 /* Base Styles */
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
-    background: rgb(141,39,19);
-    background: linear-gradient(34deg, rgba(141,39,19,1) 32%, rgba(255,94,0,1) 90%);
-      padding: 10px 20px;
+    background: #D4DCCD;
+    padding: 10px 20px;
     height: auto;
 }
 

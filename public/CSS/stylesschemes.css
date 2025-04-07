@@ -107,14 +107,133 @@ header p {
     background-color: #218838;
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #28a745;
+#modern-footer {
+    background: linear-gradient(to right, #2E8B57, #228B22);
+    padding: 50px 20px;
     color: white;
-    font-size: 0.9rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+}
+
+.modern-footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+}
+
+.footer-column-footer-logo img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 15px;
+    min-width: 200px;
+}
+
+.footer-column h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #fcd462;
+}
+
+.footer-column p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* Social Media Icons */
+.modern-footer-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.modern-footer-icons a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.modern-footer-icons a img:hover {
+    filter: brightness(1.2);
+}
+
+/* Quick Links */
+.modern-footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.modern-footer-links li {
+    margin-bottom: 10px;
+}
+
+.modern-footer-links a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.modern-footer-links a:hover {
+    color: #fcd462;
+}
+
+/* Contact Info */
+.modern-footer-contact {
+    list-style: none;
+    padding: 0;
+    color: #ddd;
+}
+
+.modern-footer-contact li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modern-footer-contact i {
+    color: #fcd462;
+    font-size: 16px;
+}
+
+/* Footer Bottom */
+.modern-footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: #1B5E20;
+    color: white;
+    margin-top: 30px;
+}
+
+.modern-footer-bottom a {
+    color: #fcd462;
+    text-decoration: none;
+}
+
+.modern-footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .modern-footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    .modern-footer-icons {
+        justify-content: center;
+    }
 }

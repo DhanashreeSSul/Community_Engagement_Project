@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylescrop.CSS" href="/CSS/stylescrop.CSS">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Learning Modules</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .search-box {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .module {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            padding: 15px;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .module h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .module iframe {
+            width: 100%;
+            height: 315px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Farmer Learning Modules</h1>
+</header>
+
+<div class="container">
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search for a course...">
+    </div>
+
+    <!-- Example Playlist 1 -->
+    <div class="module" data-title="Sustainable Agriculture">
+        <h2>Weed Management</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=2OCAtEJK5I755DKp&amp;list=PLBFe1VOje52BNHancY7OShXzvOF_0MmXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Example Playlist 2 -->
+    <div class="module" data-title="Farmer Training">
+        <h2>Farmer Training</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=6dxx0FQPwH3qsuNS&amp;list=PLBFe1VOje52DRRfG3bSKTd_NQJ-CitBkx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="module" data-title="Farmer Training">
+        <h2>Nutrient Management</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=efnLsMB1TGg_OzE6&amp;list=PLBFe1VOje52Bd_Oa_fcx93uduCzDqKsCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="module" data-title="Farmer Training">
+        <h2>Soil Health And Its Importance</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=nV5ZMObvVWNq2X8Y&amp;list=PLBFe1VOje52AT2VdP6Tj7OyfsjhzMpxHe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="module" data-title="Farmer Training">
+        <h2>Nursery Management </h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=24yhQhj2Mz8zznOy&amp;list=PLBFe1VOje52AIh_4LBNVYBUyOTEdiyfM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+
+    <!-- Add more playlists as needed -->
+</div>
+
+<script>
+    // Search Functionality
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', function() {
+        const query = searchInput.value.toLowerCase();
+        const modules = document.querySelectorAll('.module');
+
+        modules.forEach(module => {
+            const title = module.getAttribute('data-title').toLowerCase();
+            if (title.includes(query)) {
+                module.style.display = 'block';
+            } else {
+                module.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
