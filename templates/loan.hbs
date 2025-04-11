@@ -6,10 +6,12 @@
     <title>Loan Calculator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="/CSS/stylesloan.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+      <header>
         <div class="header-left">
             <p>Email: support@agriculture.com</p>
             <p>Toll-Free: 1800-123-4567</p>
@@ -19,20 +21,36 @@
             <p>Empowering Farmers, Ensuring Growth</p>
         </div>
         <div class="header-right">
-            <div class="auth-section">
-                <a href="login.html" class="login">Login</a>
-                <span>|</span>
-                <a href="registration.html" class="signup">Sign Up</a>
-            </div>
-            <div class="social-icons">
-                <a href="#" target="_blank"><img src="Assets/facebook.png" alt="Facebook"></a>
-                <a href="#" target="_blank"><img src="Assets/twitter.png" alt="Twitter"></a>
-                <a href="#" target="_blank"><img src="Assets/instagram.png" alt="Instagram"></a>
-                <a href="#" target="_blank"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
-            </div>
+            <a href="/profile">
+                <img src="Assets/woman.png" alt="Profile" class="profile-pic">
+            </a>
+             <a href="#" class="logout-btn">USER</a>
         </div>
-    </header>
 
+    </header>
+            
+    <nav>
+        <div class="logo">
+            <img src="Assets/k1.png" alt="Logo">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="/index">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Services</a>
+                <div class="dropdown-content">
+                    <a href="/schemes">Schemes</a>
+                    <a href="/crop">Crop Guidance</a>
+                    <a href="/loan">Loan Calculator</a>
+                </div>
+            </div>
+            <a href="/about">About</a>
+            <a href="/schemes">Schemes</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
     <div class="container">
         <h1>Loan EMI Calculator</h1>
         <form id="loanForm">
@@ -50,7 +68,7 @@
         <div id="result"></div>
     </div>
 
-    <footer id="modern-footer">
+   <footer id="modern-footer">
         <div class="modern-footer-container">
             <div class="footer-column-footer-logo">
                 <img src="Assets/k1.png" alt="Logo">
@@ -68,12 +86,12 @@
             <div class="footer-column">
                 <h2>Quick Links</h2>
                 <ul class="modern-footer-links">
-                    <li><a href="index.hbs">Home</a></li>
+                    <li><a href="/index">Home</a></li>
                     <li><a href="/loan">Loan Calculator</a></li>
                     <li><a href="/schemes">Schemes</a></li>
-                    <li><a href="#">Crop guidance</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/crop">Crop guidance</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -87,7 +105,7 @@
         </div>
         </div>
         <div class="modern-footer-bottom">
-            <p>&copy; 2025 KisanVikas | <a href="#">Privacy Policy</a></p>
+            <p>&copy; 2025 KisanVikas | <a href="/policy">Privacy Policy</a></p>
         </div>
     </footer>
 

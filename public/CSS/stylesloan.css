@@ -1,167 +1,10 @@
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
-    background-image: url("farmer.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100%;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgb(3,91,9);
-    background: linear-gradient(332deg, rgba(3,91,9,1) 35%, rgba(2,158,13,1) 82%);
-    padding: 10px 20px;
-    color: white;
-    flex-wrap: wrap;
-    position: relative;
-    width: 100%;
-}
-
-.header-left, .header-center, .header-right {
-    flex: 1;
-}
-
-/* Header Left */
-.header-left {
-    font-size: 0.9em;
-    text-align: left;
-}
-
-.header-left p {
-    margin: 5px 0;
-    color: #080a3c;
-}
-
-/* Header Center */
-.header-center {
-    text-align: center;
-}
-
-.header-center h1 {
-    margin: 0;
-    font-size: 2em;
-    color: #06072f;
-    transition: color 0.3s ease;
-}
-
-h1:hover {
-    color: #f7b538;
-}
-
-.header-center p {
-    color: white;
-    margin-top: 5px;
-    font-size: 1.2em;
-    transition: text-decoration 0.3s ease;
-}
-
-.header-center p:hover {
-    text-decoration: underline;
-    color: #d0c303;
-}
-
-/* Header Right */
-.header-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-}
-
-.auth-section {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.9em;
-}
-
-.auth-section a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.auth-section a:hover {
-    color: #f7b538;
-}
-
-.social-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.social-icons a img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease;
-}
-
-.social-icons a img:hover {
-    transform: scale(1.2);
-}
-
-
-@media screen and (max-width: 1024px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 15px;
-    }
-    
-    .header-left, .header-right {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .header-left p, .header-right .auth-section {
-        font-size: 0.8em;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .header-left, .header-right {
-        text-align: center;
-        order: 2;
-    }
-    
-    .header-center {
-        order: 1;
-    }
-    
-    .auth-section {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    h1 {
-        font-size: 1.5em;
-    }
-    
-    .header-center p {
-        font-size: 1em;
-    }
-    
-    .social-icons a img {
-        width: 20px;
-        height: 20px;
-    }
-}
 .container {
     margin: 3%;
     background-color: rgba(255, 255, 255, 0.95);
@@ -169,9 +12,13 @@ h1:hover {
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 90%;
+    height: 30%;
     max-width: 500px;
     backdrop-filter: blur(5px);
     text-align: center;
+    align-items: center;
+    margin-left: 30%;
+    
 }
 
 h1 {

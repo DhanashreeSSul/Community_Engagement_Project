@@ -1,122 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylescrop.CSS" href="/CSS/stylescrop.CSS">
-
+    <link rel="stylesheet" href="/CSS/stylescrop.css">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmer Learning Modules</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
-        .container {
-            padding: 20px;
-        }
-
-        .search-box {
-            margin: 20px 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .search-box input {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .module {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            padding: 15px;
-            width: 90%;
-            max-width: 800px;
-        }
-
-        .module h2 {
-            margin: 0;
-            font-size: 20px;
-            color: #333;
-        }
-
-        .module iframe {
-            width: 100%;
-            height: 315px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 4px;
-        }
-    </style>
+    <title>Crop Guidance - KisanVikas</title>
 </head>
 <body>
 
 <header>
-    <h1>Farmer Learning Modules</h1>
+    <div class="header-left">
+        <p>Email: support@agriculture.com</p>
+        <p>Toll-Free: 1800-123-4567</p>
+    </div>
+    <div class="header-center">
+        <h1>KisanVikas</h1>
+        <p>Empowering Farmers, Ensuring Growth</p>
+    </div>
+    <div class="header-right">
+        <a href="/profile">
+            <img src="Assets/woman.png" alt="Profile" class="profile-pic">
+        </a>
+        <a href="#" class="logout-btn">USER</a>
+    </div>
 </header>
+
+<nav>
+    <div class="logo">
+        <img src="Assets/k1.png" alt="Logo">
+    </div>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <div class="nav-links">
+        <a href="/index">Home</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-btn">Services</a>
+            <div class="dropdown-content">
+                <a href="/schemes">Schemes</a>
+                <a href="/crop">Crop Guidance</a>
+                <a href="/loan">Loan Calculator</a>
+            </div>
+        </div>
+        <a href="/about">About</a>
+        <a href="/schemes">Schemes</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
 
 <div class="container">
     <div class="search-box">
         <input type="text" id="search" placeholder="Search for a course...">
     </div>
 
-    <!-- Example Playlist 1 -->
-    <div class="module" data-title="Sustainable Agriculture">
-        <h2>Weed Management</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=2OCAtEJK5I755DKp&amp;list=PLBFe1VOje52BNHancY7OShXzvOF_0MmXo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+    <div class="module-grid">
+        <!-- Video Module -->
+        <div class="module" data-title="Farmer Training">
+            <h2>Farmer Training</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLBFe1VOje52DRRfG3bSKTd_NQJ-CitBkx" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Weed Management">
+            <h2>Weed Management</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLBFe1VOje52BNHancY7OShXzvOF_0MmXo" allowfullscreen></iframe>
+        </div>
+        
+        <div class="module" data-title="Nutrient Management">
+            <h2>Nutrient Management</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLBFe1VOje52Bd_Oa_fcx93uduCzDqKsCt" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Soil Health">
+            <h2>Soil Health And Its Importance</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLBFe1VOje52AT2VdP6Tj7OyfsjhzMpxHe" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Nursery Management">
+            <h2>Nursery Management</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLBFe1VOje52AIh_4LBNVYBUyOTEdiyfM2" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Organic Farming">
+            <h2>Organic Farming</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL_JBLkeIIhm6HxS_30pIWoR8TGdgCrZwm" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Mushroom Cultivation">
+            <h2>Mushroom Cultivation</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLeB3pvIz7iiE8iyzPlxu7OcmGGfgGcSY6" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Irrigation Techniques">
+            <h2>Irrigation</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLQ2UVxnnj86RB34J8IU_YqZsVrV9n8Fi3" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Fish Farming">
+            <h2>Fish Farming</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLwx5xn8O3tTyRG0B72Xp6e_uBH4lYjRik" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Poultry Farming">
+            <h2>Poultry Farming</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLSF8H-3Fa7qEYDfkS39S5PlaFFglgNWTb" allowfullscreen></iframe>
+        </div>
+            
+        <div class="module" data-title="Dairy Farming">
+        <h2>Dairy Farming</h2>
+        <iframe src="https://www.youtube.com/embed/videoseries?list=PLAgwSLU5x3zy0dAjN53AcmACeLnNZ8ekj" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Crop Disease Management">
+            <h2>Crop Disease Management</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL5P8XSoZWG5OqWy9gCC8ZJHO2Y6A_2ODc" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Beekeeping">
+            <h2>Beekeeping</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLQ2UVxnnj86RMJraQ0XgbkLw-6WTeqGxL" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Crop Harvesting Techniques">
+            <h2>Crop Harvesting</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLAQeZavGAcOBeIkxk8NkaF5HZH7o_Lqye" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Farm Machinery">
+            <h2>Farm Machinery</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLoBM7GIi4Dkgyq6UVTEgo7qXvNZm7ZK4b" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Drip Irrigation">
+            <h2>Drip Irrigation</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL5P8XSoZWG5MBp4gAkMSYb99pIQaXznmi" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Composting Techniques">
+            <h2>Composting Techniques</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL8KjKDK5x1aJAs8EsqjqodHpAlJJSRSLz" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Agri Startups">
+            <h2>Agri Startups</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLQ2UVxnnj86R53MCZgnXiyAK2lKgKaOZ7" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Horticulture">
+            <h2>Horticulture</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL8jEx3dCWVJcsXAoJqREEx_BwZxF8dkU7" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Agroforestry">
+            <h2>Agroforestry</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLcS3RUf9kn8SKEaobNQvKYXhIilwKE9xt" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Organic Farming">
+            <h2>Organic Farming</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLF0qT3ChGn4uAFg0QkpKMcQAK2czZDt6K" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Poultry Farming">
+            <h2>Poultry Farming</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLZ3Eq-yQmiy3Zr61fuASBqj7o9rLKTGLJ" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Hydroponics">
+            <h2>Hydroponics</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLpQmF3qRLIU6KlsPt5EwIgo7zWiKgFWfT" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Aquaponics">
+            <h2>Aquaponics</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLWzJ0BpznA0JjzGQ7Q4V-fXG2BO7x4psr" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Vermicomposting">
+            <h2>Vermicomposting</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLh8HhZx5G7nMRYAx4vbE6UM9QF7GZ3sCe" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Modern Farming Tools">
+            <h2>Modern Farming Tools</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLBqH3RMcUdfCVbC6uRhR8NfJ5O2UItE6j" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Agri Finance & Insurance">
+            <h2>Agri Finance & Insurance</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLylWq3AErU3kE6X7RTYKaClT7fBP7F9ZI" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Climate Smart Agriculture">
+            <h2>Climate Smart Agriculture</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL65D193BF7D1A3B2F" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Soil Testing & Fertility">
+            <h2>Soil Testing</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL5P8XSoZWG5NJqE0wEBYuJf_JhUxzN18z" allowfullscreen></iframe>
+        </div>
+        <div class="module" data-title="Smart Farming (IoT)">
+            <h2>Smart Farming (IoT)</h2>
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PL7dHj2HtRE_oixYH8IQ_z9UuPPFy9MKxB" allowfullscreen></iframe>
+        </div>
 
-    <!-- Example Playlist 2 -->
-    <div class="module" data-title="Farmer Training">
-        <h2>Farmer Training</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=6dxx0FQPwH3qsuNS&amp;list=PLBFe1VOje52DRRfG3bSKTd_NQJ-CitBkx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
-    <div class="module" data-title="Farmer Training">
-        <h2>Nutrient Management</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=efnLsMB1TGg_OzE6&amp;list=PLBFe1VOje52Bd_Oa_fcx93uduCzDqKsCt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="module" data-title="Farmer Training">
-        <h2>Soil Health And Its Importance</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=nV5ZMObvVWNq2X8Y&amp;list=PLBFe1VOje52AT2VdP6Tj7OyfsjhzMpxHe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="module" data-title="Farmer Training">
-        <h2>Nursery Management </h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=24yhQhj2Mz8zznOy&amp;list=PLBFe1VOje52AIh_4LBNVYBUyOTEdiyfM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-
-
-    <!-- Add more playlists as needed -->
 </div>
 
+<footer id="modern-footer">
+        <div class="modern-footer-container">
+            <div class="footer-column-footer-logo">
+                <img src="Assets/k1.png" alt="Logo">
+                <p>Your trusted partner for digital solutions.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="modern-footer-icons">
+                    <a href="#"><img src="Assets/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Assets/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul class="modern-footer-links">
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/loan">Loan Calculator</a></li>
+                    <li><a href="/schemes">Schemes</a></li>
+                    <li><a href="/crop">Crop guidance</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+            <h2>Contact</h2>
+            <ul class="modern-footer-contact">
+                <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
+                <li><i class="fas fa-phone"></i> Toll-Free: 1800-123-4567</li>
+                <li><i class="fas fa-envelope"></i> Email: support@agriculture.com</li>
+                <li><i class="fas fa-comment-dots"></i> <a href="https://forms.gle/E5sQEWYuMW8FFmyN9" style="color: #fcd462; text-decoration: underline;">Give Feedback</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="modern-footer-bottom">
+            <p>&copy; 2025 KisanVikas | <a href="/policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+    
+
 <script>
-    // Search Functionality
     const searchInput = document.getElementById('search');
-    searchInput.addEventListener('input', function() {
+    searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();
         const modules = document.querySelectorAll('.module');
-
         modules.forEach(module => {
             const title = module.getAttribute('data-title').toLowerCase();
-            if (title.includes(query)) {
-                module.style.display = 'block';
-            } else {
-                module.style.display = 'none';
-            }
+            module.style.display = title.includes(query) ? 'block' : 'none';
         });
     });
 </script>

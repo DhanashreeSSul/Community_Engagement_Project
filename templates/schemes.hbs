@@ -5,114 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agriculture Schemes</title>
     <link rel="stylesheet" href="/CSS/stylesschemes.css">
-    <style>
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        header h1 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        .schemes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .scheme {
-            background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .scheme:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-        .scheme h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--heading-color);
-        }
-        .scheme p {
-            margin-bottom: 0.75rem;
-            color: var(--light-text);
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: not-allowed;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #3d8b40;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            background-color: white;
-            margin-top: 3rem;
-            border-top: 1px solid #eee;
-        }
-        footer p {
-            color: var(--light-text);
-            font-size: 0.9rem;
-        }
-        .loading {
-            text-align: center;
-            padding: 2rem;
-            color: var(--light-text);
-        }
-        .error-message {
-            color: #d32f2f;
-            text-align: center;
-            padding: 1.5rem;
-            background-color: #ffebee;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        .amount {
-            font-weight: 500;
-            color: var(--heading-color);
-        }
-    </style>
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
 </head>
 <body>
     <header>
         <h1>Agriculture Schemes Portal</h1>
         <p>Empowering farmers by connecting them with the right opportunities</p>
     </header>
-
-    <div class="container">
-        <h2>Available Schemes</h2>
-        <div id="schemeResults" class="schemes">
-            <div class="loading">
-                <p>Loading schemes...</p>
-                <div class="spinner"></div>
-            </div>
+            
+    <nav>
+        <div class="logo">
+            <img src="Assets/k1.png" alt="Logo">
         </div>
-    </div>
+        <div class="menu-toggle" id="mobile-menu">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="/index">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Services</a>
+                <div class="dropdown-content">
+                    <a href="/schemes">Schemes</a>
+                    <a href="/crop">Crop Guidance</a>
+                    <a href="/loan">Loan Calculator</a>
+                </div>
+            </div>
+            <a href="/about">About</a>
+            <a href="/schemes">Schemes</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+    <div class="container">
+  <h2>Available Schemes</h2><br>
+  <h3>Count Of Schemes</h3>
 
-    <footer id="modern-footer">
+  <div class="filters">
+    <select id="typeFilter">
+      <option value="">All Types</option>
+      <option value="Central">Central Scheme</option>
+      <option value="State">State Scheme</option>
+    </select>
+    <select id="residenceFilter">
+      <option value="">All Residences</option>
+      <option value="Rural">Rural</option>
+      <option value="Urban">Urban</option>
+    </select>
+    <select id="occupationFilter">
+      <option value="">All Occupations</option>
+      <option value="Farmer">Farmer</option>
+      <option value="Fisher">Fisher</option>
+      <option value="Entrepreneur">Entrepreneur</option>
+    </select>
+  </div>
+    <div class="scheme-container" id="schemeContainer"></div>
+<div id="schemeCountContainer">
+  <h3 id="schemeCount" >Count Of Schemes: 29 </h3>
+</div>
+
+
+  <div id="schemeResults" class="schemes"></div>
+  
+</div>
+
+<footer id="modern-footer">
         <div class="modern-footer-container">
             <div class="footer-column-footer-logo">
                 <img src="Assets/k1.png" alt="Logo">
@@ -130,15 +87,15 @@
             <div class="footer-column">
                 <h2>Quick Links</h2>
                 <ul class="modern-footer-links">
-                    <li><a href="index.hbs">Home</a></li>
+                    <li><a href="/index">Home</a></li>
                     <li><a href="/loan">Loan Calculator</a></li>
                     <li><a href="/schemes">Schemes</a></li>
-                    <li><a href="#">Crop guidance</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/crop">Crop guidance</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
-        </div>
-           <div class="footer-column">
+            </div>
+            <div class="footer-column">
             <h2>Contact</h2>
             <ul class="modern-footer-contact">
                 <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
@@ -149,101 +106,349 @@
         </div>
         </div>
         <div class="modern-footer-bottom">
-            <p>&copy; 2025 KisanVikas | <a href="#">Privacy Policy</a></p>
+            <p>&copy; 2025 KisanVikas | <a href="/policy">Privacy Policy</a></p>
         </div>
     </footer>
+    
+      
 
-    <script>
-        document.addEventListener("DOMContentLoaded", async () => {
-            const apiKey = '579b464db66ec23bdd0000018073a827c89b44077e0e13abdafd1426';
-            const apiUrl = `https://api.data.gov.in/resource/c622afa6-6515-419e-8d48-001358fe9aba?api-key=${apiKey}&format=json`;
+<script>
+  const schemes = [
+  {
+    name: "Rural Infrastructure Development Fund (RIDF)",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Finance rural infrastructure projects",
+    features: "Credit for rural infrastructure like irrigation, roads, and warehousing.",
+    eligibility: "State Governments, Local Bodies, Rural Development Organizations",
+    link: "https://www.nabard.org/content.aspx?id=570"
+  },
+  {
+    name: "NABARD Financial Services (NABFINS)",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Provide financial services to rural areas",
+    features: "Loans and financial support to rural businesses, farmers, and SHGs.",
+    eligibility: "Farmers, SHGs, rural enterprises, microfinance institutions",
+    link: "https://www.nabfins.org/"
+  },
+  {
+    name: "Maharashtra Mukhyamantri Saur Krushi Pump Yojana",
+    launchedBy: "Maharashtra Government",
+    type: "State",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Promote solar-powered irrigation systems",
+    features: "Subsidies for solar water pumps",
+    eligibility: "Farmers with a functional water source for irrigation",
+    link: "https://www.mahadiscom.in/solar/index.html"
+  },
+  {
+    name: "Mahatma Jyotirao Phule Karj Mukti Yojana",
+    launchedBy: "Maharashtra Government",
+    type: "State",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Loan waiver for farmers",
+    features: "Waives loans up to ₹2 lakhs",
+    eligibility: "Small and marginal farmers with outstanding crop loans",
+    link: "https://shetkari.mahaonline.gov.in/"
+  },
+  {
+    name: "Telangana Rythu Bandhu",
+    launchedBy: "Telangana Government",
+    type: "State",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Direct investment support for farmers",
+    features: "₹10,000 per acre per year",
+    eligibility: "Farmers owning land in Telangana",
+    link: "https://treasury.telangana.gov.in/"
+  },
+  {
+    name: "Odisha KALIA Scheme",
+    launchedBy: "Odisha Government",
+    type: "State",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Financial support to small and marginal farmers",
+    features: "₹10,000/year for input costs, livelihood support, and insurance",
+    eligibility: "Small and marginal farmers, sharecroppers, and landless agricultural laborers",
+    link: "https://kalia.odisha.gov.in/"
+  },
+  {
+    name: "Madhya Pradesh Bhavantar Bhugtan Yojana",
+    launchedBy: "Madhya Pradesh Government",
+    type: "State",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Compensate farmers for price differences in crops",
+    features: "Farmers receive payment for the gap between market price and MSP",
+    eligibility: "Farmers cultivating crops specified under the scheme",
+    link: "http://mpkrishi.mp.gov.in/"
+  },
+  {
+    name: "National Livestock Mission (NLM)",
+    launchedBy: "Ministry of Agriculture",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Support for animal husbandry and fisheries",
+    features: "Financial assistance for livestock development",
+    eligibility: "Farmers, livestock owners, and entrepreneurs in allied sectors",
+    link: "https://dahd.nic.in/national-livestock-mission"
+  },
+  {
+    name: "Agri-Clinics and Agri-Business Centres Scheme",
+    launchedBy: "Ministry of Agriculture",
+    type: "Central",
+    residence: "Urban",
+    occupation: "Entrepreneur",
+    objective: "Encourage entrepreneurship in agriculture",
+    features: "Training and loans to set up agri-business ventures",
+    eligibility: "Graduates in agriculture and allied disciplines",
+    link: "https://www.agriclinics.net/"
+  },
+  {
+    name: "PM Atma Nirbhar Bharat Agriculture Infrastructure Fund",
+    launchedBy: "Government of India",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Entrepreneur",
+    objective: "Create agriculture infrastructure at the farm level",
+    features: "Loans for building storage, processing units, and other facilities",
+    eligibility: "Individuals, cooperatives, FPOs, and companies in the agriculture sector",
+    link: "https://www.agriinfra.dac.gov.in/"
+  },
+  {
+    name: "SHG-Bank Linkage Programme",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Entrepreneur",
+    objective: "Link SHGs with banks for financial inclusion",
+    features: "Provides credit to SHGs, improving access to loans for rural women and marginalized groups",
+    eligibility: "Self-Help Groups (SHGs), rural women, and marginalized communities",
+    link: "https://www.nabard.org/content.aspx?id=591"
+  },
+  {
+    name: "Kisan Credit Card (KCC) Scheme",
+    launchedBy: "NABARD & Banks",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Provide timely credit to farmers for agricultural needs",
+    features: "Working capital loans at subsidized interest rates for farmers involved in farming and allied activities",
+    eligibility: "Farmers engaged in farming and allied activities",
+    link: "https://vikaspedia.in/agriculture/policies-and-schemes/kisan-credit-card-kcc"
+  },
+  {
+    name: "Producer Organizations Development Fund (PODF)",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Promote the formation of Farmer Producer Organizations (FPOs)",
+    features: "Financial assistance for strengthening FPOs, making them more competitive and sustainable",
+    eligibility: "Farmer Producer Organizations (FPOs) and cooperatives",
+    link: "https://www.nabard.org/content.aspx?id=613"
+  },
+  {
+    name: "Farm Sector Promotion Programs",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Enhance productivity and efficiency in agriculture",
+    features: "Support for organic farming, farm mechanization, and value-added processing",
+    eligibility: "Farmers, FPOs, cooperatives, and rural agricultural enterprises",
+    link: "https://www.nabard.org/content.aspx?id=589"
+  },
+  {
+    name: "Farm Mechanization Scheme",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Promote modern farm machinery to improve productivity",
+    features: "Provides loans and subsidies for purchasing tractors, harvesters, and other farm equipment",
+    eligibility: "Farmers, cooperatives, and farmer groups involved in mechanized farming",
+    link: "https://agricoop.nic.in/en/Farm-mechanization"
+  },
+  {
+    name: "Rural Credit Facility",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Provide rural development credit",
+    features: "Loans for agricultural development, irrigation, land development, and rural infrastructure",
+    eligibility: "Farmers, rural businesses, and rural development projects",
+    link: "https://www.nabard.org/content.aspx?id=627"
+  },
+  {
+    name: "NABARD Scheme for Microfinance",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Entrepreneur",
+    objective: "Promote microfinance to improve financial access",
+    features: "Financial support to Microfinance Institutions (MFIs) and SHGs for financing farmers and rural populations",
+    eligibility: "Microfinance institutions, SHGs, and rural enterprises",
+    link: "https://www.nabard.org/content.aspx?id=592"
+  },
+  {
+    name: "Watershed Development Fund (WDF)",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Promote sustainable land and water management practices",
+    features: "Financial assistance for watershed development and water conservation projects",
+    eligibility: "Watershed development projects, local bodies, NGOs, and rural communities",
+    link: "https://www.nabard.org/content.aspx?id=611"
+  },
+  {
+    name: "Rural Entrepreneurship Development Program (REDP)",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Entrepreneur",
+    objective: "Encourage rural entrepreneurship",
+    features: "Training, financial assistance, and technical support for rural entrepreneurs",
+    eligibility: "Rural entrepreneurs, micro and small businesses in rural areas",
+    link: "https://www.nabard.org/content.aspx?id=603"
+  },
+  {
+    name: "Export Finance",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Entrepreneur",
+    objective: "Support agricultural exports",
+    features: "Provides pre-shipment and post-shipment finance for agricultural exports",
+    eligibility: "Agricultural exporters, FPOs, cooperatives engaged in export activities",
+    link: "https://www.nabard.org/content.aspx?id=617"
+  },
+  {
+    name: "Kisan Credit Card (KCC) Scheme for Fisheries",
+    launchedBy: "NABARD & Banks",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Fisher",
+    objective: "Provide credit facilities to fish farmers",
+    features: "Special provisions for fish farmers under the KCC scheme",
+    eligibility: "Fish farmers and aquaculture units",
+    link: "https://dof.gov.in/fisheries-sector/kisan-credit-card-kcc"
+  },
+  {
+    name: "Financial Inclusion Fund (FIF)",
+    launchedBy: "NABARD",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Entrepreneur",
+    objective: "Promote financial inclusion in rural areas",
+    features: "Funds for institutions and initiatives aimed at expanding financial inclusion",
+    eligibility: "Financial institutions, SHGs, and rural businesses",
+    link: "https://www.nabard.org/content.aspx?id=593"
+  },
+  {
+    name: "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    launchedBy: "Government of India",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Provide financial support to farmers",
+    features: "₹6,000/year paid in three installments",
+    eligibility: "All small and marginal farmers owning up to 2 hectares of cultivable land",
+    link: "https://pmkisan.gov.in/"
+  },
+  {
+    name: "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    launchedBy: "Government of India",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Crop insurance to protect farmers from natural calamities",
+    features: "Low premium rates, quick claim settlements",
+    eligibility: "Farmers growing notified crops in notified areas",
+    link: "https://pmfby.gov.in/"
+  },
+  {
+    name: "Kisan Credit Card (KCC)",
+    launchedBy: "Government of India",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Provide credit facilities to farmers",
+    features: "Loans for crops, animal husbandry, fisheries at low-interest rates",
+    eligibility: "Farmers, dairy farmers, and fishers who meet lending institution criteria",
+    link: "https://vikaspedia.in/agriculture/policies-and-schemes/kisan-credit-card-kcc"
+  },
+  {
+    name: "PM Krishi Sinchayee Yojana (PMKSY)",
+    launchedBy: "Government of India",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Enhance irrigation coverage and water use efficiency",
+    features: "Per-drop-more-crop, watershed development, and irrigation projects",
+    eligibility: "All farmers, including groups or individual beneficiaries",
+    link: "https://pmksy.gov.in/"
+  },
+  {
+    name: "Soil Health Card Scheme",
+    launchedBy: "Government of India",
+    type: "Central",
+    residence: "Rural",
+    occupation: "Farmer",
+    objective: "Promote balanced use of fertilizers based on soil testing",
+    features: "Farmers receive a card with soil quality reports and nutrient recommendations",
+    eligibility: "All farmers across the country",
+    link: "https://soilhealth.dac.gov.in/"
+  }
+];
 
-            async function fetchSchemes() {
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'GET',
-                        headers: { 'Accept': 'application/json' }
-                    });
 
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
+  const schemeContainer = document.getElementById("schemeResults");
 
-                    const data = await response.json();
-                    
-                    if (!data.records || !Array.isArray(data.records)) {
-                        throw new Error("Invalid data format received from API");
-                    }
+  function renderSchemes(data) {
+    schemeContainer.innerHTML = data.map(scheme => `
+      <div class="scheme-card">
+        <h3>${scheme.name}</h3>
+        <p><strong>Launched By:</strong> ${scheme.launchedBy}</p>
+        <p><strong>Objective:</strong> ${scheme.objective}</p>
+        <p><strong>Key Features:</strong> ${scheme.features}</p>
+        <p><strong>Eligibility:</strong> ${scheme.eligibility}</p>
+        <a class="learn-more" href="${scheme.link}" target="_blank">Learn More</a>
+      </div>
+    `).join("");
+  }
 
-                    return data.records;
-                } catch (error) {
-                    console.error("Error fetching schemes:", error);
-                    throw error;
-                }
-            }
+  function applyFilters() {
+    const type = document.getElementById("typeFilter").value;
+    const residence = document.getElementById("residenceFilter").value;
+    const occupation = document.getElementById("occupationFilter").value;
 
-            function displaySchemes(schemes) {
-                const container = document.getElementById('schemeResults');
-                container.innerHTML = '';
+    const filtered = schemes.filter(scheme => 
+      (!type || scheme.type === type) &&
+      (!residence || scheme.residence === residence) &&
+      (!occupation || scheme.occupation === occupation)
+    );
 
-                if (!schemes || schemes.length === 0) {
-                    container.innerHTML = `
-                        <div class="error-message">
-                            No schemes available at the moment. Please try again later.
-                        </div>
-                    `;
-                    return;
-                }
+    renderSchemes(filtered);
+  }
 
-                schemes.forEach((scheme, index) => {
-                    const schemeDiv = document.createElement('div');
-                    schemeDiv.classList.add('scheme');
-
-                    const schemeName = scheme.name_of_mission__scheme || `Scheme ${index + 1}`;
-                    const budgetEstimate = scheme._2014_15___be ? 
-                        `<span class="amount">₹${scheme._2014_15___be.toLocaleString()} crore</span>` : 
-                        '<span class="amount">Not Available</span>';
-                    const revisedEstimate = scheme._2014_15___re ? 
-                        `<span class="amount">₹${scheme._2014_15___re.toLocaleString()} crore</span>` : 
-                        '<span class="amount">Not Available</span>';
-                    const actualExpenditure = scheme._2014_15___actual_exp_ ? 
-                        `<span class="amount">₹${scheme._2014_15___actual_exp_.toLocaleString()} crore</span>` : 
-                        '<span class="amount">Not Available</span>';
-
-                    schemeDiv.innerHTML = `
-                        <h3>${schemeName}</h3>
-                        <p><strong>Budget Estimate (2014-15):</strong> ${budgetEstimate}</p>
-                        <p><strong>Revised Estimate (2014-15):</strong> ${revisedEstimate}</p>
-                        <p><strong>Actual Expenditure (2014-15):</strong> ${actualExpenditure}</p>
-                        <button disabled>Learn More</button>
-                    `;
-                    container.appendChild(schemeDiv);
-                });
-            }
-
-            async function loadSchemes() {
-                const container = document.getElementById('schemeResults');
-                container.innerHTML = `
-                    <div class="loading">
-                        <p>Loading schemes...</p>
-                        <div class="spinner"></div>
-                    </div>
-                `;
-
-                try {
-                    const schemes = await fetchSchemes();
-                    displaySchemes(schemes);
-                } catch (error) {
-                    container.innerHTML = `
-                        <div class="error-message">
-                            Failed to load schemes: ${error.message}. Please try again later.
-                        </div>
-                    `;
-                }
-            }
-
-            await loadSchemes();
-        });
-    </script>
+  document.getElementById("typeFilter").addEventListener("change", applyFilters);
+  document.getElementById("residenceFilter").addEventListener("change", applyFilters);
+  document.getElementById("occupationFilter").addEventListener("change", applyFilters);
+    
+  renderSchemes(schemes);
+</script>
+    
 </body>
 </html>

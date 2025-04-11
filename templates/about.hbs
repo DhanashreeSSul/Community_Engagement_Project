@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | KisanVikas</title>
+     <link rel="stylesheet" href="/CSS/styles.css"/>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        section:hover {
+            transform: translateY(-5px);
+        }
+        h1, h2, h3 {
+            color: #2e7d32;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            padding-left: 1.8rem;
+            margin-bottom: 1rem;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        ul li::before {
+            
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .vision-mission {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .vision-mission .box {
+            flex: 1 1 45%;
+            background: #e8f5e9;
+            padding: 1.8rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .facility {
+            margin-top: 2rem;
+        }
+        .facility h3 {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, #4CAF50, #66bb6a);
+            color: white;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+        }
+        .highlight {
+            color: #1b5e20;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .vision-mission {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+        <div class="header-left">
+            <p>Email: support@agriculture.com</p>
+            <p>Toll-Free: 1800-123-4567</p>
+        </div>
+        <div class="header-center">
+            <h1>KisanVikas</h1>
+            <p>Empowering Farmers, Ensuring Growth</p>
+        </div>
+        <div class="header-right">
+            <a href="/profile">
+                <img src="Assets/woman.png" alt="Profile" class="profile-pic">
+            </a>
+             <a href="#" class="logout-btn">USER</a>
+        </div>
+
+    </header>
+            
+    <nav>
+        <div class="logo">
+            <img src="Assets/k1.png" alt="Logo">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="/index">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Services</a>
+                <div class="dropdown-content">
+                    <a href="/schemes">Schemes</a>
+                    <a href="/crop">Crop Guidance</a>
+                    <a href="/loan">Loan Calculator</a>
+                </div>
+            </div>
+            <a href="/about">About</a>
+            <a href="/schemes">Schemes</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+
+<main>
+
+    <section class="vision-mission">
+        <div class="box vision">
+            <h2>Our Vision</h2>
+            <p>To revolutionize Indian agriculture by bridging the gap between farmers and essential government resources, financial aid, and innovative farming techniques, leading to sustainable growth and prosperity.</p>
+        </div>
+        <div class="box mission">
+            <h2>Our Mission</h2>
+            <p>Deliver accessible, reliable, and real-time support to every farmer through technology — making farming smarter, more profitable, and future-ready.</p>
+        </div>
+    </section>
+
+    <section class="why-choose">
+        <h2>Why Choose <span class="highlight">KisanVikas</span>?</h2>
+        <p>We understand farmers' needs and challenges. Our platform offers:</p>
+        <ul>
+            <li>One-stop access to government schemes, subsidies, and registration assistance.</li>
+            <li>Smart loan calculators for transparent financial planning.</li>
+            <li>Personalized crop advice based on soil health and local climate.</li>
+            <li>Daily updates on market prices and upcoming weather conditions.</li>
+            <li>Expert-driven video tutorials, workshops, and live Q&A sessions.</li>
+            <li>Community forums for farmers to share experiences and solutions.</li>
+        </ul>
+    </section>
+
+    <section class="facilities">
+        <h2>Facilities We Provide</h2>
+
+        <div class="facility">
+            <h3>🛡️ Government Schemes and Assistance</h3>
+            <p>Explore government initiatives, eligibility checks, easy application guidance, and real-time tracking of applications.</p>
+        </div>
+
+        <div class="facility">
+            <h3>💰 Loan Calculator</h3>
+            <p>Instantly estimate loan eligibility, monthly EMI, and get advice on improving your creditworthiness for better financial access.</p>
+        </div>
+
+        <div class="facility">
+            <h3>🌾 Crop and Fertilizer Guidance</h3>
+            <p>Receive seasonal crop recommendations, soil testing support, and fertilizer optimization strategies for higher productivity.</p>
+        </div>
+
+        <div class="facility">
+            <h3>🎓 Educational Resources and Training</h3>
+            <p>Access a rich library of video lessons, expert interviews, step-by-step cultivation methods, and pest management techniques.</p>
+        </div>
+
+        <div class="facility">
+            <h3>🤝 Farmer Support and Community</h3>
+            <p>24/7 helpdesk, peer-to-peer discussions, and expert forums to solve your doubts and share farming innovations.</p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer id="modern-footer">
+        <div class="modern-footer-container">
+            <div class="footer-column-footer-logo">
+                <img src="Assets/k1.png" alt="Logo">
+                <p>Your trusted partner for digital solutions.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="modern-footer-icons">
+                    <a href="#"><img src="Assets/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Assets/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul class="modern-footer-links">
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/loan">Loan Calculator</a></li>
+                    <li><a href="/schemes">Schemes</a></li>
+                    <li><a href="/crop">Crop guidance</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+            <h2>Contact</h2>
+            <ul class="modern-footer-contact">
+                <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
+                <li><i class="fas fa-phone"></i> Toll-Free: 1800-123-4567</li>
+                <li><i class="fas fa-envelope"></i> Email: support@agriculture.com</li>
+                <li><i class="fas fa-comment-dots"></i> <a href="https://forms.gle/E5sQEWYuMW8FFmyN9" style="color: #fcd462; text-decoration: underline;">Give Feedback</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="modern-footer-bottom">
+            <p>&copy; 2025 KisanVikas | <a href="/policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+    
+      
+
+</body>
+</html>
+

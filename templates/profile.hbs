@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Profile | KisanVikas</title>
+  <link rel="stylesheet" href="/CSS/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<style>
+    .scheme-form {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.scheme-form input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.scheme-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.scheme-form button:hover {
+    background-color: #218838;
+}
+</style>
+<body>
+    <header>
+        <div class="header-left">
+            <p>Email: support@agriculture.com</p>
+            <p>Toll-Free: 1800-123-4567</p>
+        </div>
+        <div class="header-center">
+            <h1>KisanVikas</h1>
+            <p>Empowering Farmers, Ensuring Growth</p>
+        </div>
+        <div class="header-right">
+            <a href="/profile">
+                <img src="Assets/woman.png" alt="Profile" class="profile-pic">
+            </a>
+             <a href="http://localhost:3000" class="logout-btn">Logout</a>
+        </div>
+
+    </header>
+            
+    <nav>
+        <div class="logo">
+            <img src="Assets/k1.png" alt="Logo">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="/index">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Services</a>
+                <div class="dropdown-content">
+                    <a href="/schemes">Schemes</a>
+                    <a href="/crop">Crop Guidance</a>
+                    <a href="/loan">Loan Calculator</a>
+                </div>
+            </div>
+            <a href="/about">About</a>
+            <a href="/schemes">Schemes</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+    
+  <div class="profile-container">
+    <div class="profile-header">
+        <img src="/uploads/{{photo}}" alt="Profile Photo" class="profile-photo">
+        <div class="profile-info">
+            <h2>{{username}}</h2>
+            <p><strong>Email:</strong> {{email}}</p>
+            <p><strong>Location:</strong> {{location}}</p>
+            <p><strong>Land Size:</strong> {{landSize}} acres</p>
+            <p><strong>Crops:</strong> {{crops}}</p>
+
+        </div>
+    </div>
+
+    <div class="schemes-container">
+    <!-- Applied Schemes Section -->
+    <div class="scheme-box">
+        <h3>✅ Applied Schemes</h3>
+        <ul>
+            {{#if appliedSchemes.length}}
+                {{#each appliedSchemes}}
+                    <li>{{this}}</li>
+                {{/each}}
+            {{else}}
+                <li>No applied schemes yet.</li>
+            {{/if}}
+        </ul>
+        <form action="/add-applied-scheme" method="POST" class="scheme-form">
+            <input type="text" name="schemeName" placeholder="Add new scheme..." required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <!-- Eligible Schemes Section -->
+    <div class="scheme-box">
+        <h3>🟢 Eligible Schemes</h3>
+        <ul>
+            {{#if eligibleSchemes.length}}
+                {{#each eligibleSchemes}}
+                    <li>{{this}}</li>
+                {{/each}}
+            {{else}}
+                <li>No eligible schemes listed.</li>
+            {{/if}}
+        </ul>
+        <form action="/add-eligible-scheme" method="POST" class="scheme-form">
+            <input type="text" name="schemeName" placeholder="Add new scheme..." required>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+</div>
+
+</div>
+<footer id="modern-footer">
+        <div class="modern-footer-container">
+            <div class="footer-column-footer-logo">
+                <img src="Assets/k1.png" alt="Logo">
+                <p>Your trusted partner for digital solutions.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="modern-footer-icons">
+                    <a href="#"><img src="Assets/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Assets/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul class="modern-footer-links">
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/loan">Loan Calculator</a></li>
+                    <li><a href="/schemes">Schemes</a></li>
+                    <li><a href="/crop">Crop guidance</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+            <h2>Contact</h2>
+            <ul class="modern-footer-contact">
+                <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
+                <li><i class="fas fa-phone"></i> Toll-Free: 1800-123-4567</li>
+                <li><i class="fas fa-envelope"></i> Email: support@agriculture.com</li>
+                <li><i class="fas fa-comment-dots"></i> <a href="https://forms.gle/E5sQEWYuMW8FFmyN9" style="color: #fcd462; text-decoration: underline;">Give Feedback</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="modern-footer-bottom">
+            <p>&copy; 2025 KisanVikas | <a href="/policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+    
+      
+<style>
+.profile-container {
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: sans-serif;
+}
+.profile-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.profile-info p {
+    margin: 5px 0;
+}
+.schemes-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.scheme-box {
+    width: 45%;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+}
+</style>
+
+  
+</body>
+</html>

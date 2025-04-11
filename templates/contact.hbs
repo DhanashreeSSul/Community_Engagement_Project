@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | KisanVikas</title>
+  <link rel="stylesheet" href="/CSS/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+
+  .contact-section, .thankyou-section {
+    padding: 40px 20px;
+  }
+  
+  .contact-container, .thankyou-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    color: #286029;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  .btn-submit {
+    background-color: #286029;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn-submit a{
+    text-decoration-line: none;
+    color: #f0f5f0;
+  }
+  .btn-submit:hover {
+    background-color: #286029;
+  }
+  
+
+  .contact-info {
+    margin-top: 40px;
+    background-color: #f0f5f0;
+    padding: 20px;
+    border-left: 4px solid #286029;
+    border-radius: 8px;
+  }
+  
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f9f5;
+    color: #333;
+  }
+  
+  .header {
+    background-color: #6ebe71;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  .header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  /* Contact Section */
+  .contact-section, .thankyou-section {
+    padding: 40px 20px;
+  }
+  
+  .contact-container, .thankyou-container {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Headings and Text */
+  h2 {
+    color: #286029;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Form Styles */
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+  }
+  
+  /* Submit Button and Link Button */
+  .btn-submit {
+    background-color: #286029;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .btn-submit:hover {
+    background-color: #286029;
+  }
+  
+  /* Contact Info Box */
+  .contact-info {
+    margin-top: 40px;
+    background-color: #f0f5f0;
+    padding: 20px;
+    border-left: 4px solid #286029;
+    border-radius: 8px;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #e0e0e0;
+    font-size: 0.9em;
+  }
+  
+  
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <p>Email: support@agriculture.com</p>
+            <p>Toll-Free: 1800-123-4567</p>
+        </div>
+        <div class="header-center">
+            <h1>KisanVikas</h1>
+            <p>Empowering Farmers, Ensuring Growth</p>
+        </div>
+        <div class="header-right">
+            <a href="/profile">
+                <img src="Assets/woman.png" alt="Profile" class="profile-pic">
+            </a>
+             <a href="#" class="logout-btn">USER</a>
+        </div>
+
+    </header>
+            
+    <nav>
+        <div class="logo">
+            <img src="Assets/k1.png" alt="Logo">
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            ☰
+        </div>
+        <div class="nav-links">
+            <a href="/index">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-btn">Services</a>
+                <div class="dropdown-content">
+                    <a href="/schemes">Schemes</a>
+                    <a href="/crop">Crop Guidance</a>
+                    <a href="/loan">Loan Calculator</a>
+                </div>
+            </div>
+            <a href="/about">About</a>
+            <a href="/schemes">Schemes</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </nav>
+<section class="contact-section">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>We are here to help you. Reach out for any support, queries, or feedback!</p>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" ><a href="/thankyou">Send Message</a></button>
+      </form>
+
+      <div class="contact-info">
+        <h3>Or Contact Us Directly</h3>
+        <p><strong>Email:</strong> help@kisanvikas.com</p>
+        
+        <div class="phone-row">
+          <div><strong>Syngenta:</strong> +91 98765 43210</div>
+          <div><strong>Helpline:</strong> +91 91234 56789</div>
+        </div>
+        
+        <p><strong>Address:</strong> Pccoe, Pune, India</p>
+      </div>
+      
+  </section>
+  
+  <footer id="modern-footer">
+        <div class="modern-footer-container">
+            <div class="footer-column-footer-logo">
+                <img src="Assets/k1.png" alt="Logo">
+                <p>Your trusted partner for digital solutions.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Follow Us</h2>
+                <div class="modern-footer-icons">
+                    <a href="#"><img src="Assets/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="Assets/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="Assets/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="Assets/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul class="modern-footer-links">
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/loan">Loan Calculator</a></li>
+                    <li><a href="/schemes">Schemes</a></li>
+                    <li><a href="/crop">Crop guidance</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+            <h2>Contact</h2>
+            <ul class="modern-footer-contact">
+                <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
+                <li><i class="fas fa-phone"></i> Toll-Free: 1800-123-4567</li>
+                <li><i class="fas fa-envelope"></i> Email: support@agriculture.com</li>
+                <li><i class="fas fa-comment-dots"></i> <a href="https://forms.gle/E5sQEWYuMW8FFmyN9" style="color: #fcd462; text-decoration: underline;">Give Feedback</a></li>
+            </ul>
+        </div>
+        </div>
+        <div class="modern-footer-bottom">
+            <p>&copy; 2025 KisanVikas | <a href="/policy">Privacy Policy</a></p>
+        </div>
+    </footer>
+    
+      
+
+</body>
+</html>
+
+
+
