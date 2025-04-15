@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="/CSS/loginstyles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -45,18 +46,34 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Login</h2>
-        <form action="/login" method="post">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <div class="switch">
-            <p>Don't have an account? <a href="/signup">Register</a><br>
-            <a href="/policy">Privacy Policy</a></p>
+     <section>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+      </section>
+      
+  <!-- Animated Background -->
+  <section>
 
+    <div class="login-box">
+      <h2><i class="fas fa-sign-in-alt"></i> Login</h2>
+      <form action="/login" method="POST" class="form">
+        <div class="inputBox">
+          <input type="email" name="email" required />
+          <i>Email</i>
         </div>
+        <div class="inputBox">
+          <input type="password" name="password" required />
+          <i>Password</i>
+        </div>
+        <input type="submit" value="Login" />
+        <div class="links">
+          <a href="/signup">Don't have an account? Register</a>
+          <a href="/policy">Privacy Policy</a>
+        </div>
+      </form>
     </div>
+  </section>
+   
 </body>
 </html>
