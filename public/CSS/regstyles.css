@@ -1,120 +1,170 @@
-/* Reset & Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0b1a0e 0%, #1e5c37 40%, #3cab6b 100%);
+  padding: 20px;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(60, 171, 107, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(229, 181, 79, 0.1) 0%, transparent 50%);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 480px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 45px 40px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.6s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #9eef98, #0f4419);
-    color: #0f0906;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  
-  /* Form Container */
+}
+
+.container h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  outline: none;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #3cab6b;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(60, 171, 107, 0.15);
+}
+
+.input-group input[type="file"] {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.input-group input[type="file"]::-webkit-file-upload-button {
+  background: linear-gradient(135deg, #1e5c37 0%, #3cab6b 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 8px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #1e5c37 0%, #3cab6b 100%);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(60, 171, 107, 0.35);
+}
+
+.container p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+.container p a {
+  color: #e5b54f;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.container p a:hover {
+  color: #3cab6b;
+}
+
+.error-msg {
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #e74c3c;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 520px) {
   .container {
-    background-color: white;
-    padding: 40px 30px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 500px;
-    margin: 40px auto;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 95%;
+    padding: 35px 25px;
   }
-  
-  .container h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: hsl(126, 56%, 20%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  /* Input Styles */
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: border 0.3s;
-  }
-  
-  .input-group input:focus {
-    border-color:#2e683b;
-    outline: none;
-  }
-  
-  /* Button */
-  .btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #2e683b;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #2e683b;
-  }
-  
-  /* Footer */
-  .main-footer {
-    margin-top: auto;
-    background-color: #ffffffcc;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    color: #333;
-    backdrop-filter: blur(6px);
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-  }
-  
-  /* Link */
-  .container p {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .container a {
-    color: #060e07;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .container a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Responsive */
-  @media (max-width: 600px) {
-    .main-header, .main-footer {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .main-header nav a {
-      margin: 10px 0;
-    }
-  }
-  
+}

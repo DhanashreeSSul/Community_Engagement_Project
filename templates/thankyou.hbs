@@ -1,140 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thank You | KisanVikas</title>
-  <link rel="stylesheet" href="/CSS/con.css">
-</head>
-<style>/* General Styles */
-body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f6f9f5;
-    color: #333;
-  }
-  
-  .header {
-    background-color: #6ebe71;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  .header h1 {
-    margin: 0;
-    font-size: 2.5em;
-  }
-  
-  .header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-  }
-  
-  /* Contact Section */
-  .contact-section, .thankyou-section {
-    padding: 40px 20px;
-  }
-  
-  .contact-container, .thankyou-container {
-    max-width: 600px;
-    margin: auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  /* Headings and Text */
-  h2 {
-    color: #286029;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
-  
-  /* Form Styles */
-  .contact-form .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .contact-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1em;
-    box-sizing: border-box;
-  }
-  
-  .contact-form textarea {
-    resize: vertical;
-  }
-  
-  /* Submit Button and Link Button */
-  .btn-submit {
-    background-color: #286029;
-    color: white;
-    padding: 12px 25px;
-    font-size: 1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  .btn-submit:hover {
-    background-color: #286029;
-  }
-  
-  /* Contact Info Box */
-  .contact-info {
-    margin-top: 40px;
-    background-color: #f0f5f0;
-    padding: 20px;
-    border-left: 4px solid #286029;
-    border-radius: 8px;
-  }
-  
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #e0e0e0;
-    font-size: 0.9em;
-  }
-  </style>
-<body>
+  <link rel="stylesheet" href="/CSS/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .thankyou-page {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh;
+      padding: 40px 20px;
+    }
 
-  <header class="header">
-    <h1>KisanVikas</h1>
-    <p>Empowering Farmers, Shaping Futures</p>
+    .thankyou-card {
+      background: white;
+      text-align: center;
+      padding: 50px 40px;
+      border-radius: 24px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+      max-width: 500px;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    .check-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1e5c37 0%, #3cab6b 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      animation: scaleIn 0.5s ease 0.3s both;
+    }
+
+    .check-icon i {
+      color: white;
+      font-size: 2rem;
+    }
+
+    .thankyou-card h2 {
+      color: #123b22;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .thankyou-card p {
+      color: #587060;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+
+    .btn-home {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #1e5c37 0%, #3cab6b 100%);
+      color: white;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(60, 171, 107, 0.3);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <p>Email: support@agriculture.com</p>
+      <p>Toll-Free: 1800-123-4567</p>
+    </div>
+    <div class="header-center">
+      <h1>KisanVikas</h1>
+      <p>Empowering Farmers, Ensuring Growth</p>
+    </div>
+    <div class="header-right">
+      <a href="/profile">
+        <img src="/Assets/woman.png" alt="Profile" class="profile-pic">
+      </a>
+      {{#if currentUser}}
+      <a href="/logout" class="logout-btn">Logout</a>
+      {{else}}
+      <a href="/" class="logout-btn">Login</a>
+      {{/if}}
+    </div>
   </header>
 
-  <section class="thankyou-section">
-    <div class="thankyou-container">
+  <nav>
+    <div class="logo">
+      <img src="/Assets/K1.png" alt="Logo">
+    </div>
+    <div class="menu-toggle" id="mobile-menu">☰</div>
+    <div class="nav-links">
+      <a href="/index">Home</a>
+      <div class="dropdown">
+        <a href="#" class="dropdown-btn">Services</a>
+        <div class="dropdown-content">
+          <a href="/schemes">Schemes</a>
+          <a href="/crop">Crop Guidance</a>
+          <a href="/loan">Loan Calculator</a>
+        </div>
+      </div>
+      <a href="/about">About</a>
+      <a href="/schemes">Schemes</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="thankyou-page">
+    <div class="thankyou-card">
+      <div class="check-icon">
+        <i class="fas fa-check"></i>
+      </div>
       <h2>Thank You!</h2>
       <p>Your message has been successfully recorded.</p>
-      <p>We appreciate you reaching out to us. Our team will review your query and get back to you as soon as possible if needed.</p>
-      <a href="/index" class="btn-submit">Back to Home</a>
+      <p>Our team will review your query and get back to you as soon as possible.</p>
+      <a href="/index" class="btn-home">Back to Home</a>
     </div>
-  </section>
+  </div>
 
-  <footer class="footer">
-    <p>&copy; 2025 KisanVikas. All Rights Reserved.</p>
+  <footer id="modern-footer">
+    <div class="modern-footer-container">
+      <div class="footer-column-footer-logo">
+        <img src="/Assets/K1.png" alt="Logo">
+        <p>Your trusted partner for digital solutions.</p>
+      </div>
+      <div class="footer-column">
+        <h2>Follow Us</h2>
+        <div class="modern-footer-icons">
+          <a href="#"><img src="/Assets/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="/Assets/twitter.png" alt="Twitter"></a>
+          <a href="#"><img src="/Assets/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/Assets/linkedin.png" alt="LinkedIn"></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h2>Quick Links</h2>
+        <ul class="modern-footer-links">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/loan">Loan Calculator</a></li>
+          <li><a href="/schemes">Schemes</a></li>
+          <li><a href="/crop">Crop Guidance</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h2>Contact</h2>
+        <ul class="modern-footer-contact">
+          <li><i class="fas fa-map-marker-alt"></i> PCCOE, Pune</li>
+          <li><i class="fas fa-phone"></i> Toll-Free: 1800-123-4567</li>
+          <li><i class="fas fa-envelope"></i> support@agriculture.com</li>
+          <li><i class="fas fa-comment-dots"></i> <a href="https://forms.gle/E5sQEWYuMW8FFmyN9">Give Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="modern-footer-bottom">
+      <p>&copy; 2025 KisanVikas | <a href="/policy">Privacy Policy</a></p>
+    </div>
   </footer>
 
+  <script>
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenu) {
+      mobileMenu.addEventListener("click", function () {
+        document.querySelector(".nav-links").classList.toggle("active");
+      });
+    }
+  </script>
 </body>
+
 </html>
